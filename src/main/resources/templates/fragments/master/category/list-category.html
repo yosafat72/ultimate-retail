@@ -8,7 +8,36 @@
     </head>
     <body>
         <div layout:fragment="content">
-            ini category
+            <h1 class="h3 mb-3"><strong>Category data</strong></h1>
+
+            <a type="button" class="btn btn-primary" style="margin-bottom: 20px">Add Data Category</a>
+
+            <table id="table_id" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Row 1 Data 1</td>
+                    <td>Row 1 Data 2</td>
+                </tr>
+                <tr>
+                    <td>Row 2 Data 1</td>
+                    <td>Row 2 Data 2</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
+        <th:block layout:fragment="script">
+            <script>
+                console.log("Home Page");
+                $(document).ready( function () {
+                    $('#table_id').DataTable();
+                } );
+            </script>
+        </th:block>
     </body>
 </html>
