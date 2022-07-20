@@ -1,0 +1,78 @@
+<!doctype>
+<html 
+    lang="en" 
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ultimate Retail</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+
+            <div class="card">
+                <form th:object="${user}" method="post">
+                    <div class="card-header">
+                        <h1 class="h3 mb-3"><strong>Add User data</strong></h1>
+                        <a type="button" class="btn btn-sm btn-outline-primary" style="margin-bottom: 20px" th:href="@{/master/user/list-user}">Back to list user</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6" style="margin-bottom: 10px;">
+                                <div class="form-group">
+                                    <label for="name">Id User</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter Id User" th:field="*{idUser}" disabled>
+                                </div>
+                            </div>
+                            <div class="col-sm-6" style="margin-bottom: 10px;">
+                                <div class="form-group">
+                                    <label for="name">Name User</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter name">
+                                </div>
+                            </div>
+                            <div class="col-sm-6" style="margin-bottom: 10px;">
+                                <div class="form-group">
+                                    <label for="name">Date Of Birth</label>
+                                    <input type="date" class="form-control" id="name" placeholder="Enter Date of Birth">
+                                </div>
+                            </div>
+                            <div class="col-sm-6" style="margin-bottom: 10px;">
+                                <div class="form-group">
+                                    <label for="name">Gender</label>
+                                    <select class="form-select">
+                                        <option value="">Select gender</option>
+                                        <option value="L">Male</option>
+                                        <option value="P">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6" style="margin-bottom: 10px;">
+                                <div class="form-group">
+                                    <label for="name">Phone Number</label>
+                                    <input type="number" class="form-control" id="name" placeholder="Enter phone number">
+                                </div>
+                            </div>
+                            <div class="col-sm-6" style="margin-bottom: 10px;">
+                                <div class="form-group">
+                                    <label for="name">Email</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter email">
+                                </div>
+                            </div>
+                            <div class="col-sm-6" style="margin-bottom: 10px;">
+                                <div class="form-group">
+                                    <label for="name">Description</label>
+                                    <textarea type="text" class="form-control" id="name" placeholder="Enter description" rows="4"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-sm btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>
