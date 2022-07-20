@@ -1,13 +1,12 @@
 <nav id="sidebar" class="sidebar js-sidebar">
     <div class="sidebar-content js-simplebar">
         <a class="sidebar-brand" th:href="@{/dashboard}">
-            <span class="align-middle">Ultimate POS</span>
+            <span class="align-middle">
+                <img th:src="@{/img/logo-ultimate-pos.png}" style="width: 200px">
+            </span>
         </a>
 
         <ul class="sidebar-nav">
-            <li class="sidebar-header">
-                Pages
-            </li>
 
             <li class="sidebar-item">
                 <a class="sidebar-link" th:href="@{/dashboard}">
@@ -46,6 +45,12 @@
             <li class="sidebar-item">
                 <a class="sidebar-link" th:href="@{/master/category/list-category}">
                     <i class="align-middle" data-feather="database"></i> <span class="align-middle">Category</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" th:href="@{/master/user/list-user}">
+                    <i class="align-middle" data-feather="database"></i> <span class="align-middle">User</span>
                 </a>
             </li>
 

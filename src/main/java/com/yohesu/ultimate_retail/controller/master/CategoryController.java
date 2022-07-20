@@ -11,4 +11,9 @@ public class CategoryController {
         return "fragments/master/category/list-category";
     }
 
+    @GetMapping("/master/category/insert-category")
+    public String viewInsertFormCategory(){
+        return "fragments/master/category/insert-category";
+    }
+
 }

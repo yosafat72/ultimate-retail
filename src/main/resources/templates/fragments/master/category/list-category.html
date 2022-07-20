@@ -8,29 +8,54 @@
     </head>
     <body>
         <div layout:fragment="content">
-            <h1 class="h3 mb-3"><strong>Category data</strong></h1>
 
-            <a type="button" class="btn btn-primary" style="margin-bottom: 20px">Add Data Category</a>
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="h3 mb-3"><strong>Category data</strong></h1>
+                    <a type="button" class="btn btn-sm btn-primary" style="margin-bottom: 20px" th:href="@{/master/category/insert-category}">Add Data Category</a>
+                </div>
+                <div class="card-body">
+                    <table id="table_id" class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Created date</th>
+                            <th>Updated date</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Makanan Ringanan</td>
+                            <td>-</td>
+                            <td>10 Juli 2022</td>
+                            <td>12 Juli 2022</td>
+                            <td style="text-align: center">
+                                <a type="button" class="btn btn-sm btn-primary" style="width: 75px">Edit</a>
+                                <a type="button" class="btn btn-sm btn-danger" style="width: 75px">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Minuman Ringanan</td>
+                            <td>-</td>
+                            <td>08 Juli 2022</td>
+                            <td>11 Juli 2022</td>
+                            <td style="text-align: center">
+                                <a type="button" class="btn btn-sm btn-primary" style="width: 75px">Edit</a>
+                                <a type="button" class="btn btn-sm btn-danger" style="width: 75px">Delete</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-            <table id="table_id" class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
-                </tr>
-                <tr>
-                    <td>Row 2 Data 1</td>
-                    <td>Row 2 Data 2</td>
-                </tr>
-                </tbody>
-            </table>
         </div>
+
         <th:block layout:fragment="script">
             <script>
                 console.log("Home Page");
