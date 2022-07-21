@@ -3,6 +3,8 @@ package com.yohesu.ultimate_retail.model;
 import java.util.Date;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -31,6 +33,8 @@ public class UserModel {
     @Column(name = "id_user")
     private long idUser;
 
+    @NotEmpty(message = "Please enter your name")
+    @Size(min = 3, max = 50)
     @Column(name = "nm_user")
     private String nmUser;
 

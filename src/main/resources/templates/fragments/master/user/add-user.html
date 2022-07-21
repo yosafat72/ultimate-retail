@@ -29,6 +29,7 @@
                                 <div class="form-group">
                                     <label for="name">Name User</label>
                                     <input type="text" class="form-control" id="name" placeholder="Enter name" th:field="*{nmUser}">
+                                    <span style="color:red" class="form-text" th:if="${#fields.hasErrors('nmUser')}" th:errors="*{nmUser}">Name Error</span>
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">

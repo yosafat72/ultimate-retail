@@ -4,10 +4,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Random;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -41,7 +45,15 @@ public class UserController {
     }
 
     @PostMapping("/master/user/add-user")
-    public String addUser(UserModel user, RedirectAttributes redirectAttributes) {
+    public String addUser(@Valid @ModelAttribute("user") UserModel user, BindingResult bindingResult,
+            RedirectAttributes redirectAttributes,
+            Model model) {
+
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("user", user);
+            return "fragments/master/user/add-user";
+        }
+
         userService.saveData(user);
         redirectAttributes.addFlashAttribute("success", "Data added successfully");
         return "redirect:/master/user/list-user";
