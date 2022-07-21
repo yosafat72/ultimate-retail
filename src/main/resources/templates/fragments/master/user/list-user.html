@@ -39,13 +39,16 @@
                                 <td th:text="${iterator.index+1}"></td>
                                 <td th:text="${data.idUser}"></td>
                                 <td th:text="${data.nmUser}"></td>
-                                <td th:text="${data.dobUser}"></td>
-                                <td th:text="${data.genderUser}"></td>
+                                <td th:text="${#dates.format(data.dobUser, 'dd-MMM-yyyy')}"></td>
+                                <td>
+                                    <span th:if="${data.genderUser == 'F'}">Female</span>
+                                    <span th:unless="${data.genderUser == 'F'}">Male</span>
+                                </td>
                                 <td th:text="${data.phoneUser}"></td>
                                 <td th:text="${data.emailUser}"></td>
                                 <td th:text="${data.descUser}"></td>
-                                <td th:text="${data.createdAt}"></td>
-                                <td th:text="${data.updatedAt}"></td>
+                                <td th:text="${#dates.format(data.createdAt, 'dd-MMM-yyyy')}"></td>
+                                <td th:text="${#dates.format(data.updatedAt, 'dd-MMM-yyyy')}"></td>
                                 <td style="text-align: center">
                                     <a type="button" class="btn btn-sm btn-primary" style="width: 75px">Edit</a>
                                     <a type="button" class="btn btn-sm btn-danger" style="width: 75px">Delete</a>

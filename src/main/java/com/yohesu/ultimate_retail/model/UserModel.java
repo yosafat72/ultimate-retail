@@ -1,10 +1,21 @@
 package com.yohesu.ultimate_retail.model;
 
+import java.util.Date;
+
 import javax.persistence.*;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.*;
 
 @Entity
 @Table(name = "tbl_user")
+@EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -23,8 +34,10 @@ public class UserModel {
     @Column(name = "nm_user")
     private String nmUser;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "dob_user")
-    private String dobUser;
+    private Date dobUser;
 
     @Column(name = "gender_user")
     private String genderUser;
@@ -39,9 +52,11 @@ public class UserModel {
     private String descUser;
 
     @Column(name = "created_at")
-    private String createdAt;
+    @CreatedDate
+    private Date createdAt;
 
     @Column(name = "updated_at")
-    private String updatedAt;
+    @LastModifiedDate
+    private Date updatedAt;
 
 }

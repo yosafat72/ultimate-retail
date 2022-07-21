@@ -12,7 +12,7 @@
         <div layout:fragment="content">
 
             <div class="card">
-                <form th:object="${user}" method="post">
+                <form th:object="${user}" method="post" th:action="@{/master/user/add-user}">
                     <div class="card-header">
                         <h1 class="h3 mb-3"><strong>Add User data</strong></h1>
                         <a type="button" class="btn btn-sm btn-outline-primary" style="margin-bottom: 20px" th:href="@{/master/user/list-user}">Back to list user</a>
@@ -22,47 +22,46 @@
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Id User</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter Id User" th:field="*{idUser}" disabled>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter Id User" th:field="*{idUser}">
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Name User</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter name">
+                                    <input type="text" class="form-control" id="name" placeholder="Enter name" th:field="*{nmUser}">
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Date Of Birth</label>
-                                    <input type="date" class="form-control" id="name" placeholder="Enter Date of Birth">
+                                    <input type="date" class="form-control" id="name" placeholder="Enter Date of Birth" th:field="*{dobUser}">
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Gender</label>
-                                    <select class="form-select">
-                                        <option value="">Select gender</option>
-                                        <option value="L">Male</option>
-                                        <option value="P">Female</option>
+                                    <select th:field="*{genderUser}" class="form-select">
+                                        <option th:value="'M'" th:text="Male"></option>
+                                        <option th:value="'F'" th:text="Female"></option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Phone Number</label>
-                                    <input type="number" class="form-control" id="name" placeholder="Enter phone number">
+                                    <input type="number" class="form-control" id="name" placeholder="Enter phone number" th:field="*{phoneUser}">
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Email</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter email">
+                                    <input type="text" class="form-control" id="name" placeholder="Enter email" th:field="*{emailUser}">
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Description</label>
-                                    <textarea type="text" class="form-control" id="name" placeholder="Enter description" rows="4"></textarea>
+                                    <textarea type="text" class="form-control" id="name" placeholder="Enter description" rows="4" th:field="*{descUser}"></textarea>
                                 </div>
                             </div>
                         </div>
