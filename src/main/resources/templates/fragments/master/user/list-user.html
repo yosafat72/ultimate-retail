@@ -15,6 +15,10 @@
                 <div class="card-header">
                     <h1 class="h3 mb-3"><strong>User data</strong></h1>
                     <a type="button" class="btn btn-sm btn-primary" style="margin-bottom: 20px" th:href="@{/master/user/view-add-user}">Add Data User</a>
+                    <div class="alert alert-success alert-dismissible fade show" th:if="${success}">
+                        <span class="alert-inner--text" th:text="${success}"></span>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -51,7 +55,7 @@
                                 <td th:text="${#dates.format(data.updatedAt, 'dd-MMM-yyyy')}"></td>
                                 <td style="text-align: center">
                                     <a type="button" class="btn btn-sm btn-primary" style="width: 75px">Edit</a>
-                                    <a type="button" class="btn btn-sm btn-danger" style="width: 75px">Delete</a>
+                                    <a type="button" class="btn btn-sm btn-danger"  style="width: 75px">Delete</a>
                                 </td>
                             </tr>
                             </tbody>
@@ -59,7 +63,13 @@
                     </div>
                 </div>
             </div>
-
         </div>
+        <th:block layout:fragment="script">
+            <script>
+                $(document).ready( function () {
+                    $('#table_id').DataTable();
+                } );
+            </script>
+        </th:block>
     </body>
 </html>

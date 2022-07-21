@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.yohesu.ultimate_retail.model.UserModel;
 import com.yohesu.ultimate_retail.service.UserService;
@@ -40,8 +41,9 @@ public class UserController {
     }
 
     @PostMapping("/master/user/add-user")
-    public String addUser(UserModel user) {
+    public String addUser(UserModel user, RedirectAttributes redirectAttributes) {
         userService.saveData(user);
+        redirectAttributes.addFlashAttribute("success", "Data added successfully");
         return "redirect:/master/user/list-user";
     }
 
