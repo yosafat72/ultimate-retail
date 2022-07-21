@@ -36,6 +36,7 @@
                                 <div class="form-group">
                                     <label for="name">Date Of Birth</label>
                                     <input type="date" class="form-control" id="name" placeholder="Enter Date of Birth" th:field="*{dobUser}">
+                                    <span style="color:red" class="form-text" th:if="${#fields.hasErrors('dobUser')}" th:errors="*{dobUser}">Name Error</span>
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
