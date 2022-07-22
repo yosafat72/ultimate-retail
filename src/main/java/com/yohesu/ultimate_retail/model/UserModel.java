@@ -3,6 +3,7 @@ package com.yohesu.ultimate_retail.model;
 import java.util.Date;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -45,12 +46,18 @@ public class UserModel {
     @Column(name = "dob_user")
     private Date dobUser;
 
+    @NotNull
     @Column(name = "gender_user")
     private String genderUser;
 
+    @NotNull(message = "Please enter your phone number")
+    @Size(min = 8, max = 19)
     @Column(name = "phone_user")
     private String phoneUser;
 
+    @NotNull(message = "Please enter your email")
+    @Size(min = 5, max = 50)
+    @Email(message = "Please enter a valid email")
     @Column(name = "email_user")
     private String emailUser;
 

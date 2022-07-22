@@ -52,12 +52,14 @@
                                 <div class="form-group">
                                     <label for="name">Phone Number</label>
                                     <input type="number" class="form-control" id="name" placeholder="Enter phone number" th:field="*{phoneUser}">
+                                    <span style="color:red" class="form-text" th:if="${#fields.hasErrors('phoneUser')}" th:errors="*{phoneUser}">Name Error</span>
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Email</label>
                                     <input type="text" class="form-control" id="name" placeholder="Enter email" th:field="*{emailUser}">
+                                    <span style="color:red" class="form-text" th:if="${#fields.hasErrors('emailUser')}" th:errors="*{emailUser}">Name Error</span>
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
