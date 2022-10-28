@@ -32,12 +32,7 @@ public class UserController {
 
     @GetMapping("/master/user/view-add-user")
     public String viewAddUserPage(Model model) {
-        Random rand = new Random();
-        int randomValue = rand.nextInt(1000);
-        String dateNow = new SimpleDateFormat("yyMMdd").format(Calendar.getInstance().getTime());
-        String combineValue = dateNow + randomValue;
         UserModel user = new UserModel();
-        user.setIdUser(Long.parseLong(combineValue));
 
         // Send to view
         model.addAttribute("user", user);

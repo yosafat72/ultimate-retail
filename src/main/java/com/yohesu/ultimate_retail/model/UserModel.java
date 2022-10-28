@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 @Entity
-@Table(name = "tbl_user")
+@Table(name = "tbl_users")
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,39 +30,37 @@ public class UserModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "id_user")
-    private long idUser;
+    @Column(name = "id")
+    private long id;
 
     @NotEmpty(message = "Please enter your name")
     @Size(min = 3, max = 50)
-    @Column(name = "nm_user")
-    private String nmUser;
+    @Column(name = "name")
+    private String name;
 
     @NotNull(message = "Please enter your birth date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "dob_user")
-    private Date dobUser;
+    @Column(name = "dob")
+    private Date dob;
 
     @NotNull
-    @Column(name = "gender_user")
-    private String genderUser;
+    @Column(name = "gender")
+    private String gender;
 
     @NotNull(message = "Please enter your phone number")
     @Size(min = 8, max = 19)
-    @Column(name = "phone_user")
-    private String phoneUser;
+    @Column(name = "phone")
+    private String phone;
 
     @NotNull(message = "Please enter your email")
     @Size(min = 5, max = 50)
     @Email(message = "Please enter a valid email")
-    @Column(name = "email_user")
-    private String emailUser;
+    @Column(name = "email")
+    private String email;
 
-    @Column(name = "desc_user")
-    private String descUser;
+    @Column(name = "description")
+    private String description;
 
     @Column(name = "created_at")
     @CreatedDate

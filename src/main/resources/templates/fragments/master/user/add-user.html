@@ -21,28 +21,22 @@
                         <div class="row">
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
-                                    <label for="name">Id User</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter Id User" th:field="*{idUser}" readonly>
-                                </div>
-                            </div>
-                            <div class="col-sm-6" style="margin-bottom: 10px;">
-                                <div class="form-group">
                                     <label for="name">Name User</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter name" th:field="*{nmUser}">
-                                    <span style="color:red" class="form-text" th:if="${#fields.hasErrors('nmUser')}" th:errors="*{nmUser}">Name Error</span>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter name" th:field="*{name}">
+                                    <span style="color:red" class="form-text" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Date Of Birth</label>
-                                    <input type="date" class="form-control" id="name" placeholder="Enter Date of Birth" th:field="*{dobUser}">
-                                    <span style="color:red" class="form-text" th:if="${#fields.hasErrors('dobUser')}" th:errors="*{dobUser}">Name Error</span>
+                                    <input type="date" class="form-control" id="dob" placeholder="Enter Date of Birth" th:field="*{dob}">
+                                    <span style="color:red" class="form-text" th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}">Name Error</span>
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Gender</label>
-                                    <select th:field="*{genderUser}" class="form-select">
+                                    <select th:field="*{gender}" class="form-select">
                                         <option th:value="'M'" th:text="Male"></option>
                                         <option th:value="'F'" th:text="Female"></option>
                                     </select>
@@ -51,21 +45,21 @@
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Phone Number</label>
-                                    <input type="number" class="form-control" id="name" placeholder="Enter phone number" th:field="*{phoneUser}">
-                                    <span style="color:red" class="form-text" th:if="${#fields.hasErrors('phoneUser')}" th:errors="*{phoneUser}">Name Error</span>
+                                    <input type="number" class="form-control" id="phone" placeholder="Enter phone number" th:field="*{phone}">
+                                    <span style="color:red" class="form-text" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Name Error</span>
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Email</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter email" th:field="*{emailUser}">
-                                    <span style="color:red" class="form-text" th:if="${#fields.hasErrors('emailUser')}" th:errors="*{emailUser}">Name Error</span>
+                                    <input type="text" class="form-control" id="email" placeholder="Enter email" th:field="*{email}">
+                                    <span style="color:red" class="form-text" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</span>
                                 </div>
                             </div>
                             <div class="col-sm-6" style="margin-bottom: 10px;">
                                 <div class="form-group">
                                     <label for="name">Description</label>
-                                    <textarea type="text" class="form-control" id="name" placeholder="Enter description" rows="4" th:field="*{descUser}"></textarea>
+                                    <textarea type="text" class="form-control" id="description" placeholder="Enter description" rows="4" th:field="*{description}"></textarea>
                                 </div>
                             </div>
                         </div>
